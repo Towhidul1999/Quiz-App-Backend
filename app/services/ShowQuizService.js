@@ -4,7 +4,7 @@ const { db } = require('../helpers');
 
 async function list () {
     const question =  await Quiz.find();
-    const option = await QuizOption.find();
+    const option = await QuizOption.find({},{correct:0});
     
     const quiz = [];
     
